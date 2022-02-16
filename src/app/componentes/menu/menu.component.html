@@ -1,0 +1,33 @@
+<div class="text-white grid grid-cols-3 mt-8 ml-10">
+  <nav class="text-white col-start-1 col-end-4">
+    <span class="text-sm w-full tracking-[0.4em]">Menu</span>
+    <div class="container mt-3">
+      <div class="w-full flex items-center justify-start">
+        <a
+          [routerLink]="['Code']"
+          class="flex items-center text-gray-500 text-center group hover:text-white focus:text-white"
+        >
+          <div
+            class="w-8 h-8 bg-sky-800 rounded-lg group-hover:bg-sky-500/100 group-focus:bg-sky-500/100 flex justify-center items-center"
+          >
+            <fa-icon [icon]="faCode"></fa-icon>
+          </div>
+          <p class="ml-1">Editor de código</p>
+        </a>
+      </div>
+      <div class="w-full align-center justify-start mt-2">
+        <a
+          [routerLink]="['']"
+          class="flex items-center text-gray-500 text-center group hover:text-white focus:text-white"
+        >
+          <div
+            class="w-8 h-8 bg-sky-800 group-hover:bg-sky-500/100 rounded-lg group-focus:bg-sky-500/100 flex justify-center items-center"
+          >
+            <fa-icon [icon]="faUsers"></fa-icon>
+          </div>
+          <p class="ml-1">Comunidade</p>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
