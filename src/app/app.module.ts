@@ -12,9 +12,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MensagemModule } from './componentes/mensagem/mensagem.module';
 import { EditorCodeModule } from './editor-code/editor-code.module';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { ComunidadeComponent } from './comunidade/comunidade/comunidade.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MenuComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MenuComponent,
+    ComunidadeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,15 +34,9 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
     MensagemModule,
     EditorCodeModule,
     HighlightModule,
+    SharedModule,
   ],
-  providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        fullLibraryLoader: () => import('highlight.js'),
-      },
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

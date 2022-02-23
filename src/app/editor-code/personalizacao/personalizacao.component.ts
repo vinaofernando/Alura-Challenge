@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import hljs from 'highlight.js/lib/common';
 
 @Component({
   selector: 'app-personalizacao',
@@ -7,6 +8,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./personalizacao.component.css'],
 })
 export class PersonalizacaoComponent implements OnInit {
+  hljs = hljs.listLanguages();
+
   @Input() form!: FormGroup;
 
   constructor() {}

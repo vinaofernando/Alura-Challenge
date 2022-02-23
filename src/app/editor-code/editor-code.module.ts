@@ -6,16 +6,24 @@ import { PersonalizacaoComponent } from './personalizacao/personalizacao.compone
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CodeComponent } from './code/code.component';
+import { SharedModule } from '../shared/shared.module';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
-  declarations: [MenuCodeComponent, PersonalizacaoComponent, CodeComponent],
+  declarations: [
+    MenuCodeComponent,
+    PersonalizacaoComponent,
+    CodeComponent,
+    EditorComponent,
+  ],
   imports: [
     CommonModule,
     MensagemModule,
     FormsModule,
     ReactiveFormsModule,
     HighlightModule,
+    SharedModule,
   ],
-  exports: [MenuCodeComponent, CodeComponent],
+  exports: [MenuCodeComponent, CodeComponent, EditorComponent],
 })
 export class EditorCodeModule {}

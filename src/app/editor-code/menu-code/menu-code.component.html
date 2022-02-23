@@ -4,7 +4,7 @@
       <span class="text-white text-sm tracking-[0.4em]">Seu projeto</span>
       <form class="w-full" [formGroup]="formNovoProjeto">
         <input
-          class="w-full h-10 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4"
+          class="w-full h-10 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4 hover:bg-white/[.10]"
           placeholder="Nome do seu projeto."
           formControlName="nomeProjeto"
         />
@@ -16,7 +16,7 @@
           mensagem="Faltou o nome do seu projeto."
         ></app-mensagem>
         <textarea
-          class="w-full h-20 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4"
+          class="w-full h-20 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4 hover:bg-white/[.10]"
           placeholder="Descrição do seu projeto."
           formControlName="descricaoProjeto"
           name="descricaoProjeto"
@@ -33,7 +33,9 @@
         <div>
           <button
             type="submit"
-            class="w-full h-12 rounded-lg bg-blue-600 outline-transparent text-white/[0.64] text-sm p-2.5 mt-4"
+            class="w-full h-12 rounded-lg bg-blue-700 outline-transparent text-white/[0.64] text-sm p-2.5 mt-4 hover:bg-blue-500"
+            (click)="salvarTeste()"
+            [disabled]="formNovoProjeto.invalid"
           >
             Salvar projeto
           </button>

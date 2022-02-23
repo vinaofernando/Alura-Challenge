@@ -4,22 +4,21 @@
       <span class="text-white text-sm tracking-[0.4em]">Personalização</span>
       <form class="w-full" [formGroup]="form">
         <input
-          class="w-full h-10 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4"
+          class="w-full h-10 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4 hover:bg-white/[.10]"
           placeholder="Escola linguagem"
           list="linguagem"
           formControlName="linguagem"
         />
         <datalist id="linguagem">
-          <option value="javascript">javascript</option>
-          <option value="css">css</option>
-          <option value="java">java</option>
-          <option value="pyton">pyton</option>
+          <option *ngFor="let language of hljs" value="{{ language }}">
+            {{ language }}
+          </option>
         </datalist>
         <app-mensagem
           *ngIf="
             form.get('linguagem')?.errors && form.get('linguagem')?.touched
           "
-          mensagem="Faltou o nome do seu projeto."
+          mensagem="Faltou a linguagem do seu projeto."
         ></app-mensagem>
         <input
           class="w-full h-14 rounded-lg bg-white/[.06] outline-transparent text-white/[0.64] text-sm p-2.5 mt-4"

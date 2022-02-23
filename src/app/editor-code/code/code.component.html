@@ -1,31 +1,26 @@
 <div class="flex grid grid-cols-9">
   <div class="container w-full col-start-1 col-end-7">
-    <div class="w-full h-4/5 border-[30px] border-sky-500 bg-black rounded-lg">
-      <div class="w-full m-4">
-        <span class="bg-red-600 rounded-full px-2 ml-1"></span>
-        <span class="bg-yellow-600 rounded-full px-2 ml-1"></span>
-        <span class="bg-green-600 rounded-full px-2 ml-1"></span>
-      </div>
-      <div #editor class="w-full h-4/5 text-white p-2 codigo-wrapper">
-        <code
-          class="preview outline-none hljs"
-          contenteditable="true"
-          aria-label="Editor de código"
-          [innerHTML]="code"
-        ></code>
-      </div>
-    </div>
+    <app-editor
+      [colorSelecionada]="colorSelecionada"
+      [linguagemSelecionada$]="linguagemSelecionada$"
+      [textoSelecionado$]="textoSelecionado$"
+      (textCode)="textoSelecionado($event)"
+    ></app-editor>
     <button
       type="submit"
-      class="w-full h-12 rounded-lg bg-blue-600/[.08] outline-transparent text-white/[0.64] text-sm p-2.5 mt-6"
-      (click)="atualizarLinguagem('')"
+      class="w-full h-12 rounded-lg bg-blue-600/[.08] outline-transparent text-white/[0.64] text-sm p-2.5 mt-6 hover:bg-white/[.10]"
+      (click)="atualizarConsole()"
+      [disabled]="!linguagemSelecionada"
     >
       Visualizar com o highlight
     </button>
   </div>
   <div class="col-start-7 col-end-10">
     <app-menu-code
-      (linguagemAtualizada)="atualizarLinguagem($event)"
+      (linguagemAtualizada)="linguagemSelecionada = $event"
+      (colorAtualizada)="colorSelecionada = $event"
+      (tituloAtualizado)="titulo = $event"
+      (descricaoAtualizada)="descricao = $event"
     ></app-menu-code>
   </div>
 </div>

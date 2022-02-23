@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { faCode, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,7 +10,7 @@ import { faCode, faUsers } from '@fortawesome/free-solid-svg-icons';
 export class MenuComponent implements OnInit {
   faUsers = faUsers;
   faCode = faCode;
-  constructor() {}
+  constructor(private router: RouterModule) {}
 
   ngOnInit(): void {}
 }

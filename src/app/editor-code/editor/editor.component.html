@@ -1,0 +1,25 @@
+<div
+  class="w-full h-auto border-[30px] min-h-[80%] bg-black rounded-lg"
+  id="borderColor"
+  [ngStyle]="{
+    'border-color': colorSelecionada != undefined ? colorSelecionada : '#6BD1FF'
+  }"
+>
+  <div class="w-full m-4">
+    <span class="bg-red-600 rounded-full px-2 ml-1"></span>
+    <span class="bg-yellow-600 rounded-full px-2 ml-1"></span>
+    <span class="bg-green-600 rounded-full px-2 ml-1"></span>
+  </div>
+  <div
+    #editor
+    class="w-full h-4/5 text-white p-2 codigo-wrapper whitespace-pre-wrap"
+  >
+    <pre class="h-full"><code
+          class="preview outline-none bg-black  hljs "
+          contenteditable="true"
+          aria-label="Editor de código"
+          id="code"
+          [innerHtml]="generateCode"
+        ></code></pre>
+  </div>
+</div>
