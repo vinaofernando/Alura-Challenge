@@ -1,41 +1,31 @@
-import { Element } from '@angular/compiler';
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import hljs from 'highlight.js/lib/common';
 import { Subject } from 'rxjs';
 import { Code, CodeArea } from 'src/app/editor-code/code/code';
 import { LocalStorageService } from 'src/app/shared/local-storage.service';
 import { EditorComponent } from '../editor/editor.component';
+
 @Component({
   selector: 'app-code',
   templateUrl: './code.component.html',
   styleUrls: ['./code.component.css'],
 })
-export class CodeComponent implements OnInit {
+export class CodeComponent {
   hljs = hljs.listLanguages();
 
   @Input() code!: string;
   @ViewChild(EditorComponent) editor!: EditorComponent;
 
-  linguagemSelecionada$: Subject<string> = new Subject();
-  linguagemSelecionada!: string;
-  colorSelecionada: string = '#6BD1FF';
-  textCode!: string;
-  textoSelecionado$: Subject<string> = new Subject();
-  titulo!: string;
-  descricao!: string;
-  validated: boolean = false;
+  public linguagemSelecionada$: Subject<string> = new Subject();
+  public linguagemSelecionada!: string;
+  public colorSelecionada: string = '#6BD1FF';
+  public textCode!: string;
+  public textoSelecionado$: Subject<string> = new Subject();
+  public titulo!: string;
+  public descricao!: string;
+  public validated: boolean = false;
 
   constructor(private readonly localStorageService: LocalStorageService) {}
-
-  ngOnInit(): void {}
-  ngAfterViewInit() {}
 
   atualizarConsole() {
     this.linguagemSelecionada$.next(this.linguagemSelecionada);
@@ -43,7 +33,7 @@ export class CodeComponent implements OnInit {
   textoSelecionado($event: string) {
     this.textCode = $event;
   }
-  salvarCor() {
+  salvarCodigoModificado() {
     this.textoSelecionado$.next('');
 
     let codeArea: CodeArea = {
@@ -60,7 +50,7 @@ export class CodeComponent implements OnInit {
 
     code.push(codeArea);
 
-    console.log(code);
     this.localStorageService.set('code', JSON.stringify(code));
+    this.editor.codeAtualizado.innerHTML = '';
   }
 }

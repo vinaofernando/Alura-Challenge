@@ -12,14 +12,14 @@
   </div>
   <div
     #editor
-    class="w-full h-4/5 text-white p-2 codigo-wrapper whitespace-pre-wrap"
+    class="w-full h-full text-white p-2 codigo-wrapper whitespace-pre-wrap"
   >
-    <pre class="h-full"><code
-          class="preview outline-none bg-black  hljs "
-          contenteditable="true"
-          aria-label="Editor de código"
-          id="code"
-          [innerHtml]="generateCode"
-        ></code></pre>
+    <code
+      class="preview outline-none bg-black hljs"
+      contenteditable="true"
+      aria-label="Editor de código"
+      id="code"
+      [innerHtml]="generateCode"
+    ></code>
   </div>
 </div>

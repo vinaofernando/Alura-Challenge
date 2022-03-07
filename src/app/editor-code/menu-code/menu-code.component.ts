@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { CodeComponent } from '../code/code.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-menu-code',
@@ -39,7 +40,8 @@ export class MenuCodeComponent implements OnInit {
   public color!: string;
   constructor(
     private formBuilder: FormBuilder,
-    private codeEditor: CodeComponent
+    private codeEditor: CodeComponent,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -72,6 +74,12 @@ export class MenuCodeComponent implements OnInit {
   }
 
   salvarTeste() {
-    return this.codeEditor.salvarCor();
+    this.codeEditor.salvarCodigoModificado();
+    this.formNovoProjeto.reset();
+    this.formNovoProjeto.get('color')?.setValue('#6BD1FF');
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Codigo enviado para Comunidade!', 'OK!');
   }
 }

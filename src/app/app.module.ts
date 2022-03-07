@@ -14,6 +14,7 @@ import { EditorCodeModule } from './editor-code/editor-code.module';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ComunidadeComponent } from './comunidade/comunidade/comunidade.component';
 import { SharedModule } from './shared/shared.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SharedModule } from './shared/shared.module';
     EditorCodeModule,
     HighlightModule,
     SharedModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

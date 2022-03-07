@@ -1,7 +1,9 @@
 <app-header></app-header>
-<div class="grid grid-cols-12 flex flex-row">
-  <app-menu class="grid col-start-1 col-end-4"></app-menu>
-  <main class="grid col-start-4 col-end-13">
-    <router-outlet></router-outlet>
+<div
+  class="xl:container flex flex-col justify-center m-auto h-full md:grid grid-cols-12 h-full"
+>
+  <app-menu class="hidden md:grid col-start-1 col-end-4"></app-menu>
+  <main class="h-full md:grid col-start-4 col-end-13 h-full">
+    <router-outlet class=""></router-outlet>
   </main>
 </div>

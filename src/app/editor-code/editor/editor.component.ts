@@ -29,6 +29,7 @@ export class EditorComponent implements OnInit {
 
   public generateCode!: string;
   public codeAtualizado!: Element;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -36,7 +37,6 @@ export class EditorComponent implements OnInit {
       this.colorSelecionada = this.listUpdate.color;
       this.generateCode = this.listUpdate.code;
     }
-    console.log(this.codeAtualizado);
   }
   ngAfterViewInit() {
     if (this.linguagemSelecionada$)

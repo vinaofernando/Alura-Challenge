@@ -1,13 +1,13 @@
 <header class="w-full">
   <div
-    class="container flex justify-center justify-between items-center m-auto h-20 w-full mt-6"
+    class="xl:container flex justify-center justify-around items-center m-auto h-20 w-full mt-6"
   >
-    <div class="w-1/5">
+    <div class="w-2/5 flex justify-center sm:w-1/5">
       <a [routerLink]="['']">
         <img src="./assets/img/Logo.png" alt="Logo-Alura"
       /></a>
     </div>
-    <div class="w-2/4">
+    <div class="w-2/4 hidden sm:block">
       <form class="">
         <input
           type="text"
@@ -16,7 +16,7 @@
         />
       </form>
     </div>
-    <div class="w-1/5">
+    <div class="w-1/5 hidden md:block">
       <a href="" class="flex justify-end">
         <div class="flex hover:bg-white/[.10] p-2 rounded">
           <img
@@ -27,6 +27,12 @@
           <p class="text-white w-10 ml-1">Harry</p>
         </div>
       </a>
+    </div>
+    <div class="text-white w-1/5 flex justify-end sm:hidden">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </div>
+    <div class="w-1/5 text-white flex justify-center sm:w-1/5 md:hidden">
+      <fa-icon [icon]="faBars"></fa-icon>
     </div>
   </div>
 </header>
