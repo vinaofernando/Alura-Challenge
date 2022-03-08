@@ -15,7 +15,8 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ComunidadeComponent } from './comunidade/comunidade/comunidade.component';
 import { SharedModule } from './shared/shared.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HighlightModule,
     SharedModule,
     MatSnackBarModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

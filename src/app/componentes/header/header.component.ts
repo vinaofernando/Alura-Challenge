@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faCode,
+  faSearch,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +14,8 @@ import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   faBars = faBars;
   faSearch = faSearch;
+  faUsers = faUsers;
+  faCode = faCode;
   constructor() {}
 
   ngOnInit(): void {}

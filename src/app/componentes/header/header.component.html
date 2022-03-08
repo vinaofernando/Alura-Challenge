@@ -29,10 +29,41 @@
       </a>
     </div>
     <div class="text-white w-1/5 flex justify-end sm:hidden">
-      <fa-icon [icon]="faSearch"></fa-icon>
+      <!-- <fa-icon [icon]="faSearch"></fa-icon> -->
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="pesquisar"
+        aria-label="Example icon-button with a menu"
+      >
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+
+      <mat-menu #pesquisar="matMenu">
+        <input matInput mat-menu-item placeholder="Ex.Nome do avatar" />
+      </mat-menu>
     </div>
     <div class="w-1/5 text-white flex justify-center sm:w-1/5 md:hidden">
-      <fa-icon [icon]="faBars"></fa-icon>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
     </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <fa-icon [icon]="faUsers"></fa-icon>
+        <span class="ml-2"
+          ><a [routerLink]="['Comunidade']">Comunidade</a></span
+        >
+      </button>
+      <button mat-menu-item>
+        <fa-icon [icon]="faCode"></fa-icon>
+        <span class="ml-2"
+          ><a [routerLink]="['Code']">Editor de código</a></span
+        >
+      </button>
+    </mat-menu>
   </div>
 </header>
